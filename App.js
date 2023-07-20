@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import Goal from './components/goal';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={{color: "red"}}>Open up App.js to start working on your app!</Text>
-      <Text>Open up App.js to start working on your app!</Text>
+    // <View style={styles.container}>
+    //   <Text style={{color: "red"}}>Open up App.js to start working on your app!</Text>
+    //   <Text>Open up App.js to start working on your app!</Text>
 
-      <View>
-        <Text style={styles.text}>Hello World..!</Text>
-      </View>
+    //   <View>
+    //     <Text style={styles.text}>Hello World..!</Text>
+    //   </View>
 
-      <Button style={{backgroundColor: 'red'}} title='Click Me' />
-    </View>
+    //   <Button style={{backgroundColor: 'red'}} title='Click Me' />
+    // </View>
+
+    <Goal />
   );
 }
 
