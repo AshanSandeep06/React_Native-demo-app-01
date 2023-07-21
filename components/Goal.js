@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
 
 const Goal = (props) => {
   return (
@@ -26,13 +26,13 @@ const Goal = (props) => {
                 <Text>List of Goals</Text>
             </View>
 
-            <View style={{width: '100%', display: 'flex', alignItems: 'center'}}>
-                {props.allGoals.map((goal, index) => (
-                    <View key={index} style={props.stylesOption}>
-                        <Text style={{color: '#ffffff'}}>{goal}</Text>
-                    </View>
-                ))}
-            </View>
+            <ScrollView contentContainerStyle={{alignItems: 'center'}} style={{width: '80%', display: 'flex'}}>
+            {props.allGoals.map((goal, index) => (
+                <View key={index} style={props.stylesOption}>
+                    <Text style={{color: '#ffffff'}}>{goal}</Text>
+                </View>
+            ))}
+            </ScrollView>
     </>
   )
 }

@@ -13,7 +13,10 @@ export default function App() {
     
     const handleAddGoal = () => {
         if (!!courseGoal && courseGoal!== "") {
-            setAllGoals([...allGoals, courseGoal]);
+            // setAllGoals([...allGoals, courseGoal]);
+            // Alternative --> get previous array and it's values and just update that previous arry
+            // Instead of using new Array
+            setAllGoals((allGoals) => [...allGoals, courseGoal]);
         }
     };
 
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     option: {
         backgroundColor: '#1976D2',
         padding: 10,
-        width: '70%',
+        width: '93%',
         display: 'flex',
         alignItems: 'center',
         borderRadius: 5,
