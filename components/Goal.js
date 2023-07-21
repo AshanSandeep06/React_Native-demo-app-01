@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button, FlatList, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
+import GoalItem from './GoalItem';
 
 const Goal = (props) => {
   return (
@@ -40,9 +41,7 @@ const Goal = (props) => {
             {/* 2. FlatList ----> For Dynamic Contents Scrolling */}
             <FlatList keyExtractor={(goal, index) => goal.id} style={{width: '80%', display: 'flex'}} data={props.allGoals} renderItem={(allGoals) => {
               return (
-                <View style={props.stylesOption}>
-                    <Text style={{color: '#ffffff', width: '100%'}}>{allGoals.item.text}</Text>
-                </View>
+                <GoalItem text={allGoals.item.text} styles={props.stylesOption}/>
               )
             }}>
             </FlatList>
