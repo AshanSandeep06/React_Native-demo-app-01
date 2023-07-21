@@ -19,49 +19,50 @@ export default function App() {
     //----------------------------------------------------
 
     // For Goals react-native app =======>
-    // <View style={styles.appContainer}>
-    //    <View style={{width: "100%", display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingHorizontal: 50}}>
-    //     <TextInput style={{borderColor: '#cccccc', borderWidth: 1, width: '80%', marginRight: 35, paddingHorizontal: 11}} placeholder='Your Course Goal' />
-    //     <Button title='ADD GOAL'/>
-    //    </View>
+    <View style={styles.appContainer}>
+       <View style={{width: "100%", display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingHorizontal: 50}}>
+        <TextInput style={{borderColor: '#cccccc', borderWidth: 1, width: '80%', marginRight: 35, paddingHorizontal: 11}} placeholder='Your Course Goal' />
+        <Button title='ADD GOAL'/>
+       </View>
        
-    //    <View>
-    //     <Text>List of Goals</Text>
-    //    </View>
-    // </View>
+       <View>
+        <Text>List of Goals</Text>
+       </View>
+    </View>
 
     //----------------------------------------------------
 
-    <View style={styles.container}>
-      {/* 1 */}
-      <View style={{backgroundColor: 'red', width:100, height:100, justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={styles.Text}>1</Text>
-      </View>
+    // <View style={styles.container}>
+    //   {/* 1 */}
+    //   <View style={{flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center'}}>
+    //     <Text style={styles.Text}>1</Text>
+    //   </View>
 
-      {/* 2 */}
-      <View style={{backgroundColor: 'blue', width:100, height:100, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={styles.Text}>2</Text>
-      </View>
+    //   {/* 2 */}
+    //   <View style={{flex: 2, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+    //   <Text style={styles.Text}>2</Text>
+    //   </View>
 
-      {/* 3 */}
-      <View style={{backgroundColor: 'orange', width:100, height:100, justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={styles.Text}>3</Text>
-      </View>
-    </View>
+    //   {/* 3 */}
+    //   <View style={{flex: 1, backgroundColor: 'orange', justifyContent: 'center', alignItems: 'center'}}>
+    //   <Text style={styles.Text}>3</Text>
+    //   </View>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
   // Literal based js Object ekak
   container: {
-    flex: 1,
     flexDirection: "row",
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
     borderWidth: 2,
     borderColor: 'blue',
-    margin: 30
+    margin: 30,
+    width: "80%",
+    height: 300
   },
 
   Text: {
@@ -69,24 +70,24 @@ const styles = StyleSheet.create({
     color: 'white'
   },
 
-  // appContainer: {
-  //   flex: 1,
-  //   backgroundColor: '#fff',
-  //   alignItems: 'center',
-  //   justifyContent: 'flex-start',
-  //   paddingTop: 100,
-  //   gap: 20
-  // },
+  appContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 100,
+    gap: 20
+  },
 
-  // button: {
-  //   borderWidth: 2,
-  //   backgroundColor: 'red'
-  // },
+  button: {
+    borderWidth: 2,
+    backgroundColor: 'red'
+  },
 
-  // text: {
-  //   margin: 16,
-  //   borderWidth: 2, // 2px
-  //   borderColor: 'red', 
-  //   fontSize: 20
-  // }
+  text: {
+    margin: 16,
+    borderWidth: 2, // 2px
+    borderColor: 'red', 
+    fontSize: 20
+  }
 });
