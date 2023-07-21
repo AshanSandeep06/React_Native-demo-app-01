@@ -13,10 +13,10 @@ export default function App() {
     
     const handleAddGoal = () => {
         if (!!courseGoal && courseGoal!== "") {
-            // setAllGoals([...allGoals, courseGoal]);
+            // setAllGoals([...allGoals, {text: courseGoal, key: Math.random.toString()}]);
             // Alternative --> get previous array and it's values and just update that previous arry
             // Instead of using new Array
-            setAllGoals((allGoals) => [...allGoals, courseGoal]);
+            setAllGoals((allGoals) => [...allGoals, {text: courseGoal, id: Math.random().toString()}]);
         }
     };
 
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     option: {
         backgroundColor: '#1976D2',
         padding: 10,
-        width: '93%',
+        width: '100%',
         display: 'flex',
         alignItems: 'center',
         borderRadius: 5,
