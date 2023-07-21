@@ -1,7 +1,7 @@
 import {StatusBar} from 'expo-status-bar';
 import { useState } from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-// import Goal from 'components/Goal';
+import Goal from './components/Goal';
 
 export default function App() {
     const [courseGoal, setCourseGoal] = useState("");
@@ -34,34 +34,13 @@ export default function App() {
 
         // For Goals react-native app =======>
         <View style={styles.appContainer}>
-            <View style={{
-                width: "100%",
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                paddingHorizontal: 50
-            }}>
-                <TextInput value={courseGoal} onChangeText={goalTextOnChange} style={{
-                    borderColor: '#cccccc',
-                    borderWidth: 1,
-                    width: '80%',
-                    marginRight: 35,
-                    paddingHorizontal: 11
-                }} placeholder='Your Course Goal'/>
-                <Button title='ADD GOAL' onPress={handleAddGoal}/>
-            </View>
-
-            <View>
-                <Text>List of Goals</Text>
-            </View>
-
-            <View style={{width: '100%', display: 'flex', alignItems: 'center'}}>
-                {allGoals.map((goal, index) => (
-                    <View key={index} style={styles.option}>
-                        <Text style={{color: '#ffffff'}}>{goal}</Text>
-                    </View>
-                ))}
-            </View>
+            <Goal
+             courseGoal={courseGoal}
+             allGoals={allGoals}
+             goalTextOnChange={goalTextOnChange}
+             handleAddGoal={handleAddGoal}
+             stylesOption={styles.option}
+            />
         </View>
 
         //----------------------------------------------------

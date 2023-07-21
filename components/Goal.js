@@ -1,9 +1,39 @@
 import React from 'react'
-import { View } from 'react-native';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 
-const Goal = () => {
+const Goal = (props) => {
   return (
-    <View>Hello Goal</View>
+    <>
+    <View style={{
+                width: "100%",
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                paddingHorizontal: 50
+            }}>
+                <TextInput value={props.courseGoal} onChangeText={props.goalTextOnChange} style={{
+                    borderColor: '#cccccc',
+                    borderWidth: 1,
+                    width: '80%',
+                    marginRight: 35,
+                    paddingHorizontal: 11
+                }} placeholder='Your Course Goal'/>
+
+                <Button color="green" title='ADD GOAL' onPress={props.handleAddGoal}/>
+            </View>
+
+            <View>
+                <Text>List of Goals</Text>
+            </View>
+
+            <View style={{width: '100%', display: 'flex', alignItems: 'center'}}>
+                {props.allGoals.map((goal, index) => (
+                    <View key={index} style={props.stylesOption}>
+                        <Text style={{color: '#ffffff'}}>{goal}</Text>
+                    </View>
+                ))}
+            </View>
+    </>
   )
 }
 
