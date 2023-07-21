@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native';
 
-const GoalItem = ({ text, styles }) => {
+const GoalItems = ({ text, styles }) => {
   return (
     <View style={styles}>
        <Text style={{color: '#ffffff', width: '100%'}}>{text}</Text>
@@ -9,4 +9,4 @@ const GoalItem = ({ text, styles }) => {
   )
 }
 
-export default GoalItem;
+export default GoalItems;

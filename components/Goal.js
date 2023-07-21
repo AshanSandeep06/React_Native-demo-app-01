@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, FlatList, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
-import GoalItem from './GoalItem';
+import GoalItems from './GoalItems';
+import GoalInput from './GoalInput';
 
 const Goal = (props) => {
   return (
@@ -12,13 +13,7 @@ const Goal = (props) => {
                 justifyContent: 'space-evenly',
                 paddingHorizontal: 50
             }}>
-                <TextInput value={props.courseGoal} onChangeText={props.goalTextOnChange} style={{
-                    borderColor: '#cccccc',
-                    borderWidth: 1,
-                    width: '80%',
-                    marginRight: 35,
-                    paddingHorizontal: 11
-                }} placeholder='Your Course Goal'/>
+                <GoalInput courseGoal={props.courseGoal} goalTextOnChange={props.goalTextOnChange}/>
 
                 <Button color="green" title='ADD GOAL' onPress={props.handleAddGoal}/>
             </View>
@@ -41,7 +36,7 @@ const Goal = (props) => {
             {/* 2. FlatList ----> For Dynamic Contents Scrolling */}
             <FlatList keyExtractor={(goal, index) => goal.id} style={{width: '80%', display: 'flex'}} data={props.allGoals} renderItem={(allGoals) => {
               return (
-                <GoalItem text={allGoals.item.text} styles={props.stylesOption}/>
+                <GoalItems text={allGoals.item.text} styles={props.stylesOption}/>
               )
             }}>
             </FlatList>
