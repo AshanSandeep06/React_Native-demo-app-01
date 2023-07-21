@@ -1,16 +1,22 @@
 import {StatusBar} from 'expo-status-bar';
+import { useState } from 'react';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 // import Goal from 'components/Goal';
 
-const goalTextOnChange = (enteredText) => {
-    console.log(enteredText);
-};
-
-const handleAddGoal = () => {
-    console.log("Click Add Goal");
-};
-
 export default function App() {
+    const [courseGoal, setCourseGoal] = useState("");
+    const [allGoals, setAllGoals] = useState([]);
+
+    const goalTextOnChange = (enteredText) => {
+        setCourseGoal(enteredText);
+    };
+    
+    const handleAddGoal = () => {
+        if (!!courseGoal && courseGoal!== "") {
+            setAllGoals([...allGoals, courseGoal]);
+        }
+    };
+
     return (
         // For Practise code =======>
         // <View style={styles.container}>
@@ -35,7 +41,7 @@ export default function App() {
                 justifyContent: 'space-evenly',
                 paddingHorizontal: 50
             }}>
-                <TextInput onChangeText={goalTextOnChange} style={{
+                <TextInput value={courseGoal} onChangeText={goalTextOnChange} style={{
                     borderColor: '#cccccc',
                     borderWidth: 1,
                     width: '80%',
@@ -47,6 +53,14 @@ export default function App() {
 
             <View>
                 <Text>List of Goals</Text>
+            </View>
+
+            <View style={{width: '100%', display: 'flex', alignItems: 'center'}}>
+                {allGoals.map((goal, index) => (
+                    <View key={index} style={styles.option}>
+                        <Text style={{color: '#ffffff'}}>{goal}</Text>
+                    </View>
+                ))}
             </View>
         </View>
 
@@ -96,7 +110,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         paddingTop: 100,
-        gap: 20
+        gap: 20,
     },
 
     button: {
@@ -109,5 +123,15 @@ const styles = StyleSheet.create({
         borderWidth: 2, // 2px
         borderColor: 'red',
         fontSize: 20
+    },
+
+    option: {
+        backgroundColor: '#1976D2',
+        padding: 10,
+        width: '70%',
+        display: 'flex',
+        alignItems: 'center',
+        borderRadius: 5,
+        marginBottom: 10,
     }
 });
