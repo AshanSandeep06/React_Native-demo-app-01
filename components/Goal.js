@@ -13,9 +13,11 @@ const Goal = (props) => {
                 justifyContent: 'space-evenly',
                 paddingHorizontal: 50
             }}>
-                <GoalInput courseGoal={props.courseGoal} goalTextOnChange={props.goalTextOnChange}/>
-
-                <Button color="green" title='ADD GOAL' onPress={props.handleAddGoal}/>
+                <GoalInput 
+                  courseGoal={props.courseGoal} 
+                  goalTextOnChange={props.goalTextOnChange}
+                  handleAddGoal={props.handleAddGoal}
+                  />
             </View>
 
             <View>
