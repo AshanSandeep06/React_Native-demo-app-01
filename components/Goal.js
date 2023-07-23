@@ -38,7 +38,7 @@ const Goal = (props) => {
             {/* 2. FlatList ----> For Dynamic Contents Scrolling */}
             <FlatList keyExtractor={(goal, index) => goal.id} style={{width: '80%', display: 'flex'}} data={props.allGoals} renderItem={(allGoals) => {
               return (
-                <GoalItems text={allGoals.item.text} styles={props.stylesOption}/>
+                <GoalItems text={allGoals.item.text} styles={props.stylesOption} />
               )
             }}>
             </FlatList>
